@@ -1,8 +1,9 @@
-class Item {
+abstract class Item {
   constructor(private name: string) {}
   getName(this: Item) {
     console.log(this.name);
   }
+  abstract getInfo(this: Item): void
 }
 
 class Person extends Item {
@@ -11,6 +12,9 @@ class Person extends Item {
   }
   getAge(this: Person) {
     console.log(this.age);
+  }
+  getInfo() {
+    
   }
 }
 

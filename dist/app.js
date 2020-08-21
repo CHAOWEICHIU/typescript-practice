@@ -28,6 +28,8 @@ var Person = (function (_super) {
     Person.prototype.getAge = function () {
         console.log(this.age);
     };
+    Person.prototype.getInfo = function () {
+    };
     return Person;
 }(Item));
 var wayne = new Person(10, 'wayne');

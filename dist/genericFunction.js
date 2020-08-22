@@ -9,4 +9,6 @@ function countElements(elements) {
     }
     return [elements, description];
 }
-var _a = countElements('goodjob'), els = _a[0], des = _a[1];
+console.log(countElements(['good']));
+console.log(countElements([]));
+console.log(countElements(['good', 'good']));

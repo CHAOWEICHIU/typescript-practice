@@ -14,5 +14,6 @@ function countElements<T extends Lengthy>(elements:T): [T, string] {
   return [elements, description]
 }
 
-const [els, des] = countElements('goodjob')
-// console.log(els + des)
+console.log(countElements(['good']))
+console.log(countElements([]))
+console.log(countElements(['good', 'good']))

@@ -30,5 +30,9 @@ printSpeed({
 });
 var inputA = document.getElementById('example-a');
 var inputB = document.getElementById('example-b');
+var inputC = document.getElementById('example-c');
 inputA.value = 'good';
 inputB.value = 'job';
+if (inputC) {
+    inputC.value = 'there';
+}

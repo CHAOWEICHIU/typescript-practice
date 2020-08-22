@@ -45,5 +45,10 @@ printSpeed({
 // Input Element (type casting)
 const inputA = document.getElementById('example-a')! as HTMLInputElement
 const inputB = <HTMLInputElement>document.getElementById('example-b')!
+const inputC = document.getElementById('example-c')
 inputA.value = 'good'
 inputB.value = 'job'
+if(inputC) {
+  (inputC as HTMLInputElement).value = 'there'
+}
+

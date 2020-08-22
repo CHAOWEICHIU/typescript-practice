@@ -17,7 +17,10 @@ var DataStorage = (function () {
         this.items.push(item);
     };
     DataStorage.prototype.removeItem = function (item) {
-        this.items.splice(this.items.indexOf(item, 1));
+        if (this.items.indexOf(item) === -1) {
+            return;
+        }
+        this.items.splice(this.items.indexOf(item), 1);
     };
     return DataStorage;
 }());
@@ -30,3 +33,10 @@ numberAndTextDataStorage.addItem("ok");
 numberAndTextDataStorage.addItem("good");
 numberAndTextDataStorage.addItem(4);
 console.log(numberAndTextDataStorage.getItems());
+var objectDataStorage = new DataStorage();
+var referenceA = { good: "job" };
+var referenceB = { hello: "job" };
+objectDataStorage.addItem(referenceA);
+objectDataStorage.addItem(referenceB);
+objectDataStorage.removeItem(referenceA);
+console.log(objectDataStorage.getItems());

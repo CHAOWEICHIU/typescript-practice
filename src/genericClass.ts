@@ -8,7 +8,10 @@ class DataStorage<T> {
     this.items.push(item);
   }
   removeItem(item: T) {
-    this.items.splice(this.items.indexOf(item, 1));
+    if (this.items.indexOf(item) === -1) {
+      return;
+    }
+    this.items.splice(this.items.indexOf(item), 1);
   }
 }
 
@@ -23,4 +26,11 @@ numberAndTextDataStorage.addItem("good");
 numberAndTextDataStorage.addItem(4);
 console.log(numberAndTextDataStorage.getItems()); // ['ok', 'good', 4]
 
+const objectDataStorage = new DataStorage<object>();
+const referenceA = { good: "job" }
+const referenceB = { hello: "job" }
 
+objectDataStorage.addItem(referenceA);
+objectDataStorage.addItem(referenceB);
+objectDataStorage.removeItem(referenceA);
+console.log(objectDataStorage.getItems());

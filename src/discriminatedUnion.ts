@@ -1,5 +1,5 @@
-interface Person {
-  type: "person";
+interface PersonWow {
+  type: "wow";
   runSpeed: number;
 }
 
@@ -8,7 +8,7 @@ interface Car {
   moveSpeed: number;
 }
 
-type MovingItem = Car | Person;
+type MovingItem = Car | PersonWow;
 
 function printSpeed(item: MovingItem) {
   let speed: number;
@@ -17,14 +17,15 @@ function printSpeed(item: MovingItem) {
       speed = item.moveSpeed;
       break;
     }
-    case "person": {
+    case "wow": {
       speed = item.runSpeed;
       break;
     }
-    default: {
-      speed = 0
-    }
-    console.log(speed);
+    default:
+      {
+        speed = 0;
+      }
+      console.log(speed);
   }
 }
 
@@ -35,3 +36,8 @@ const aCar: Car = {
 };
 
 printSpeed(aCar);
+printSpeed({ type: "car", moveSpeed: 10, name: "ok" });
+printSpeed({
+  type: "wow",
+  runSpeed: 30,
+});

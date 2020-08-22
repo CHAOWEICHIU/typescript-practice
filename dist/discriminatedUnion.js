@@ -6,7 +6,7 @@ function printSpeed(item) {
             speed = item.moveSpeed;
             break;
         }
-        case "person": {
+        case "wow": {
             speed = item.runSpeed;
             break;
         }
@@ -23,3 +23,8 @@ var aCar = {
     type: "car",
 };
 printSpeed(aCar);
+printSpeed({ type: "car", moveSpeed: 10, name: "ok" });
+printSpeed({
+    type: "wow",
+    runSpeed: 30,
+});

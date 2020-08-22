@@ -1,4 +1,4 @@
-function merge<T, U>(a: T, b: U) {
+function merge<T extends object, U extends object>(a: T, b: U) {
   return Object.assign(a, b);
 }
 
@@ -16,3 +16,8 @@ interface Price {
 const objB = merge<Ball, Price>({ name: "ok" }, { amount: 3 });
 objB.amount;
 objB.name;
+
+/*
+  const objC = merge<Ball, Price>({ name: "ok" }, 3);
+                                                  3 will will throw an error with extends
+*/ 

@@ -36,3 +36,7 @@ inputB.value = 'job';
 if (inputC) {
     inputC.value = 'there';
 }
+var error = {
+    email: 'invalid email',
+    length: 'length must be greater than 8'
+};

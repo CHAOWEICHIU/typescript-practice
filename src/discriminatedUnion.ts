@@ -52,3 +52,14 @@ if(inputC) {
   (inputC as HTMLInputElement).value = 'there'
 }
 
+
+// Error Container
+
+interface ErrorContainer { // { email: 'invalid email', length: 'length must be greater than 8', ...more }
+  [key: string]: string
+}
+
+const error: ErrorContainer = {
+  email: 'invalid email',
+  length: 'length must be greater than 8'
+}

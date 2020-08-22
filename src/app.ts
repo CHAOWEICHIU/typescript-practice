@@ -27,3 +27,23 @@ const person = {
 };
 
 console.log(person?.job?.title)
+
+
+const backendDataOfUndefined = undefined || 'DEFAULT'
+const backendDataOfNull = null || 'DEFAULT'
+const backendDataWithEmptyString = '' || 'DEFAULT'
+
+backendDataOfUndefined      // DEFAULT
+backendDataOfNull           // DEFAULT
+backendDataWithEmptyString  // DEFAULT
+
+
+const backendDataOfUndefinedUsingNullish = undefined ?? 'DEFAULT'
+const backendDataOfNullUsingNullish = null ?? 'DEFAULT'
+const backendDataWithEmptyStringUsingNullish = null ?? 'DEFAULT'
+
+backendDataOfUndefinedUsingNullish      // DEFAULT
+backendDataOfNullUsingNullish           // DEFAULT
+backendDataWithEmptyStringUsingNullish  // ''
+
+

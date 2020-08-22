@@ -1,11 +1,23 @@
 "use strict";
-function printPerson(person) {
-    var name = person.name;
-    console.log(name);
-    if ('privileges' in person) {
-        console.log(person.privileges);
+var Car = (function () {
+    function Car(name) {
+        this.name = name;
     }
-    if ('createdAt' in person) {
-        console.log(person.createdAt);
+    return Car;
+}());
+var Truck = (function () {
+    function Truck(name) {
+        this.name = name;
+    }
+    Truck.prototype.load = function () {
+    };
+    return Truck;
+}());
+var carA = new Car('Toyota');
+var carB = new Car('Ford');
+function printCar(car) {
+    if (car instanceof Truck) {
+        car.load();
     }
 }
+printCar(carA);

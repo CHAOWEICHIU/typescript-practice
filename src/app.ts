@@ -1,25 +1,24 @@
-type Admin = {
-  name: string;
-  privileges: string[];
+class Car {
+  constructor(public name: string){}
 }
 
-type Employee = {
-  name: string;
-  createdAt: Date;
-}
+class Truck {
+  constructor(public name: string){}
 
-type UnknownPerson = Admin | Employee
+  load() {
 
-function printPerson(person:UnknownPerson) {
-  const {
-    name
-  } = person
-  console.log(name)
-  if('privileges' in person) {
-    console.log(person.privileges)
-  }
-  
-  if('createdAt' in person) {
-    console.log(person.createdAt)
   }
 }
+
+type Vehicle = Car | Truck
+
+const carA = new Car('Toyota')
+const carB = new Car('Ford')
+
+function printCar(car:Vehicle) {
+  if(car instanceof Truck) {
+    car.load()
+  }
+}
+
+printCar(carA)

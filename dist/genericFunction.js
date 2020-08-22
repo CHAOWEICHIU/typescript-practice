@@ -12,3 +12,7 @@ function countElements(elements) {
 console.log(countElements(['good']));
 console.log(countElements([]));
 console.log(countElements(['good', 'good']));
+function extractValue(key, value) {
+    return "Value: " + key[value];
+}
+extractValue({ good: 'job' }, 'good');

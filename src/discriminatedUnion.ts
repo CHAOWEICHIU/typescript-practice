@@ -41,3 +41,9 @@ printSpeed({
   type: "wow",
   runSpeed: 30,
 });
+
+// Input Element (type casting)
+const inputA = document.getElementById('example-a')! as HTMLInputElement
+const inputB = <HTMLInputElement>document.getElementById('example-b')!
+inputA.value = 'good'
+inputB.value = 'job'

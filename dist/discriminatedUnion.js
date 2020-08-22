@@ -28,3 +28,7 @@ printSpeed({
     type: "wow",
     runSpeed: 30,
 });
+var inputA = document.getElementById('example-a');
+var inputB = document.getElementById('example-b');
+inputA.value = 'good';
+inputB.value = 'job';
